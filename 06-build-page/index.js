@@ -80,8 +80,6 @@ const copyDir = async (src, dest) => {
     // 4. assets
     const assetsDestPath = path.join(dirDest, 'assets');
     await mkdir(assetsDestPath, { recursive: true });
-    console.log(assetsPath);
-    console.log(assetsDestPath);
     await copyDir(assetsPath, assetsDestPath);
   } catch (error) {
     console.error(error);
