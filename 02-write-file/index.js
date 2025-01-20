@@ -1,5 +1,7 @@
 const fs = require('fs');
-const output = fs.createWriteStream('text.txt', { flags: 'a' });
+const path = require('path');
+const outputPath = path.join(__dirname, 'text.txt');
+const output = fs.createWriteStream(outputPath, { flags: 'a' });
 const { stdout, stdin, exit } = process;
 
 output.on('error', (error) => {
